@@ -23,7 +23,7 @@ To get started with the Cypress tutorial, follow these steps:
 1. Clone this repository to your local machine:
 
    ```
-   git clone https://github.com/your-username/cypress-tutorial.git
+   git clone https://github.com/anshul-sonpure/cypress-tutorial.git
 
 2. Install Cypress and its dependencies:
 
@@ -38,6 +38,13 @@ npm install cypress-xpath
 6. Learn, practice, and enhance your Cypress testing skills!
 
 ## Contributing
-If you'd like to contribute to this Cypress tutorial repository, 
-we welcome your contributions! Feel free to open issues, submit pull requests, or suggest improvements. 
-Together, we can create a valuable resource for the Cypress community.
+Contributions are welcome! If you find a bug or want to enhance the project, feel free to create a pull request. Please ensure your code follows best practices and includes appropriate tests.
+
+Fork the repository.
+- Create a new branch: git checkout -b feature/your-feature-name.
+- Make changes and commit them: git commit -am 'Add new feature'.
+- Push to the branch: git push origin feature/your-feature-name.
+- Create a pull request.
+
+Thank You,
+Happy Coding and Learning. :)
