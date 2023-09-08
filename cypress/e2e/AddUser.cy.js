@@ -6,8 +6,8 @@ const LastName = faker.person.lastName();
 const password= faker.internet.password()+faker.number.int({ min: 100, max: 500 });
 const usrname = FirstName+' '+LastName
 
-describe('Login into the application', () => {
-    it('Verify that User is able to login', () => {
+describe('Add User in Application', () => {
+    it('Verify that Admin is able to User', () => {
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
         cy.get('[name="username"]').type('Admin');
         cy.get('[type="password"]').type('admin123');
@@ -23,7 +23,8 @@ describe('Login into the application', () => {
         cy.xpath("(//label[@class='oxd-label oxd-input-field-required' and .='Password']//following::div/input)[1]").type(password);
         cy.xpath("//label[@class='oxd-label oxd-input-field-required' and .='Confirm Password']//following::div/input").type(password);
         cy.xpath("//button[@type='submit' and .=' Save ']").click();
-        cy.xpath("//h6[@class='oxd-text oxd-text--h6 --strong']").should('contains',usrname);
+        cy.wait(3000)
+        cy.xpath("//h6[@class='oxd-text oxd-text--h6 --strong']").should('have.text', usrname);
         
     });
 });
