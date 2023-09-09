@@ -1,10 +1,6 @@
 describe('Search User', () => {
     it('Verify that Admin is able to search user', () => {
-        cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
-        cy.get('[name="username"]').type('Admin');
-        cy.get('[type="password"]').type('admin123');
-        cy.get('button[type="submit"]').click();
-        cy.title().should('eq', 'OrangeHRM');
+        cy.AdminLogin();
         let user = cy.xpath("//p[@class='oxd-userdropdown-name']").then(($value) => {
             user = $value.text();
             })

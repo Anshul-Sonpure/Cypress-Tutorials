@@ -8,11 +8,7 @@ const usrname = FirstName+' '+LastName
 
 describe('Add User in Application', () => {
     it('Verify that Admin is able to User', () => {
-        cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
-        cy.get('[name="username"]').type('Admin');
-        cy.get('[type="password"]').type('admin123');
-        cy.get('button[type="submit"]').click();
-        cy.title().should('eq', 'OrangeHRM');
+        cy.AdminLogin();
         cy.xpath("//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and .='PIM']").click();
         cy.xpath("//div[@class='orangehrm-header-container']/button").click();
         cy.xpath("//input[@name='firstName']").type(FirstName);

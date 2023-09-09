@@ -30,3 +30,13 @@ cy.on('uncaught:exception', (err, runnable) => {
     // Return false to prevent Cypress from failing the test
     return false;
 });
+
+Cypress.Commands.add('AdminLogin',()=>{
+    cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+    cy.get('[name="username"]').type('Admin');
+    cy.get('[type="password"]').type('admin123');
+    cy.get('button[type="submit"]').click();
+    cy.title().should('eq', 'OrangeHRM');
+
+
+})
