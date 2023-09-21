@@ -26,10 +26,13 @@
 
 /// <reference types="cypress"/>
 /// <reference types="cypress-xpath"/>
+
+import "cypress-ntlm-auth/dist/commands";
+
 cy.on('uncaught:exception', (err, runnable) => {
     // Return false to prevent Cypress from failing the test
     return false;
-});
+})
 
 Cypress.Commands.add('AdminLogin',()=>{
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -40,3 +43,11 @@ Cypress.Commands.add('AdminLogin',()=>{
 
 
 })
+
+Cypress.Commands.add('logToExternalFile', (message) => {
+    // Define the log file path
+    const logFilePath = 'cypress/logs/application.log';
+  
+    // Create or append to the log file
+    cy.writeFile(logFilePath, `[${new Date().toISOString()}] ${message}\n`, { flag: 'a+' });
+  });

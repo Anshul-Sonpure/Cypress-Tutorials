@@ -1,0 +1,5 @@
+import './LoginApp.cy'
+import './VerifyTitle.cy'
+import './SearchUser.cy'
+import './AddUser.cy'
+import './DeleteUser.cy'

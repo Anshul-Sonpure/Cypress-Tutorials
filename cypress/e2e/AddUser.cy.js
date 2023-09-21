@@ -8,6 +8,7 @@ const usrname = FirstName+' '+LastName
 
 describe('Add User in Application', () => {
     it('Verify that Admin is able to User', () => {
+        const startTime = Date.now();
         cy.AdminLogin();
         cy.xpath("//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and .='PIM']").click();
         cy.xpath("//div[@class='orangehrm-header-container']/button").click();
@@ -21,6 +22,7 @@ describe('Add User in Application', () => {
         cy.xpath("//button[@type='submit' and .=' Save ']").click();
         cy.wait(3000)
         cy.xpath("//h6[@class='oxd-text oxd-text--h6 --strong']").should('have.text', usrname);
-        
+        const loadTime = Date.now() - startTime;
+    cy.log(`Page load time: ${loadTime}ms`);
     });
 });
